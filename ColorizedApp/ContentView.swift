@@ -18,7 +18,7 @@ struct ContentView: View {
                 .opacity(0.8)
                 .ignoresSafeArea()
             VStack {
-                RoundedRectangleView(redSliderValue: $redSliderValue, greenSliderValue: $greenSliderValue, blueSliderValue: $blueSliderValue)
+                RoundedRectangleView(redSliderValue: redSliderValue, greenSliderValue: greenSliderValue, blueSliderValue: blueSliderValue)
                     
                 ColorSliderView(value: $redSliderValue, textColor: .red)
                 ColorSliderView(value: $greenSliderValue, textColor: .green)
@@ -60,9 +60,9 @@ struct ColorSliderView: View {
 }
 
 struct RoundedRectangleView: View {
-    @Binding var redSliderValue: Double
-    @Binding var greenSliderValue: Double
-    @Binding var blueSliderValue: Double
+    var redSliderValue: Double
+    var greenSliderValue: Double
+    var blueSliderValue: Double
     var body: some View {
         RoundedRectangle(cornerRadius: 20)
             .frame(width: 350,height: 150)
